@@ -1,0 +1,120 @@
+<!DOCTYPE HTML>
+<!--
+	Introspect by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+	<head>
+		<title>Culturez-vous!</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body>
+
+		<!-- Header -->
+			<header id="header">
+				<div class="inner">
+					<a href="index.html" class="logo">Culturez-vous!</a>
+					<nav id="nav">
+						<a href="index.html">Accueil</a>
+						<a href="chercher.html">Chercher ou proposer une rencontre</a>
+						<!--
+						<a href="generic.html">Vue générique</a>
+						<a href="elements.html">Éléments</a>
+						-->
+					</nav>
+				</div>
+			</header>
+			<a href="#menu" class="navPanelToggle"><span class="fa fa-bars"></span></a>
+
+		<!-- Main -->
+			<section id="main" >
+				<div class="inner">
+					<header class="major special">
+						<h1>Chercher ou proposer un évènement</h1>
+						<p>Pour soumettre un évènement, recherchez-en les critères et cliquez sur "nouveau" depuis la page de résultats</p>
+					</header>
+					<form action="resultats.html" method="get">
+						<div class="field first">
+							<label for="nom">Nom</label>
+							<input type="text" name="nom" id="nom" />
+						</div>
+						<div class="field">
+							<label for="email">Email</label>
+							<input type="text" name="email" id="email" />
+						</div>
+						<div class="field">
+							<label for="activite">Activité</label>
+							<select name="activite" id="activite">
+								<option value="poney" selected>Choisir une activité...</option>
+								<option value="poney">Poney</option>
+								<option value="piscine">Piscine</option>
+								<option value="aquaponey">Aquaponey</option>
+								<option value="cinema">Cinéma</option>
+							</select>
+							<p>Si le label de l'activité est trop vague, donnez des précisions dans la section "Quelque chose à ajouter?".<br/>
+							Par exemple si vous choisissez d'aller au cinéma, mettez-y le(s) film(s) que vous souhaitez aller regarder ("Star Wars", ...).</p>
+						</div>
+						<div class="field">
+							<label for="lieu">Lieu</label>
+							<!-- 
+							TODO here: 
+							liste déroulante/champ de recherche, avec option "choisir sur la carte...", à la façon de ce que font les divers sites considérés comme bien ergonomiques
+
+							Liens utiles: 
+							- API leaflet, équivalent OSM de l'API google maps: http://leafletjs.com/reference-1.3.0.html
+							- plugin texbox recherche leaflet: https://gis.stackexchange.com/questions/130623/adding-a-search-box-to-a-leaflet-js-example & https://github.com/stefanocudini/leaflet-search
+							- site inspirant (d'après JB, on n'a pas pu le tester): https://www.lacartedescolocs.fr/je-recherche-une-colocation
+							-->
+							<input type="text" name="lieu" id="lieu" style="margin-bottom:20px" />
+							<iframe
+							  width="600"
+							  height="450"
+							  frameborder="0" style="border:0"
+							  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCnib83EmSypP6_GRQyNmOj1tv535W-W40&q=Space+Needle,Seattle+WA" allowfullscreen>
+							</iframe>
+							<script type="text/javascript">
+							  window.addEventListener("load", function() {
+							  	$("#lieu").keyup(function(){
+							  		var google_api_key_anis = "AIzaSyCnib83EmSypP6_GRQyNmOj1tv535W-W40";
+							  		var search = $("#lieu").val().replace(" ", "+");
+							  		var url = "https://www.google.com/maps/embed/v1/place?key=" + google_api_key_anis + "&q=" + search;
+							  		$("form iframe").attr("src", url);
+							  	})
+							  });
+							</script>
+						</div>
+						<div class="field">
+							<label for="message">Quelque chose à ajouter?</label>
+							<textarea name="message" id="message" rows="3"></textarea>
+						</div>
+						<ul class="actions">
+							<li><input type="submit" value="Rechercher" class="alt" /></li>
+						</ul>
+					</form>
+			</section>
+
+		<!-- Footer -->
+			<section id="footer">
+				<div class="inner">
+					<header>
+						<h2>Get in Touch</h2>
+					</header>
+					<div class="copyright">
+						&copy; Untitled Design: <a href="https://templated.co/">TEMPLATED</a>. Images <a href="https://unsplash.com/">Unsplash</a>
+					</div>
+				</div>
+			</section>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+			<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
+
+	</body>
+</html>
