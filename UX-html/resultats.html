@@ -58,7 +58,7 @@
 
 							    var marker, i;
 
-							    for (i = 0; i < locations.length; i++) {  
+							    for (i = 0; i < locations.length; i++) {
 							      marker = new google.maps.Marker({
 							        position: new google.maps.LatLng(locations[i][1], locations[i][2]),
 							        map: map
@@ -82,7 +82,7 @@
 							<h1 class="activite"></h1>
 							<p class="nom"><span style="font-weight: bold">Initiateur</span>: <span class="text"></span></p>
 							<p class="lieu"><span style="font-weight: bold">Lieu</span>: <span class="text"></span></p>
-							<p class="message"><span class="text"></span></p>
+							<p class="message"></p>
 							<ul class="actions">
 								<li><a href="#" class="button alt new_hangout">Créer une sortie...</a></li>
 							</ul>
@@ -133,8 +133,14 @@
 						  		["activite", "nom", "lieu", "message", "next", "new_hangout"].forEach(function(attr){
 				  					$("#sortie ." + attr).css("visibility", event[attr] ? "visible" : "hidden");
 
-					  				if (typeof event[attr] == "string") {
-					  					$("#sortie ." + attr + " .text").text(event[attr]);
+										if (typeof event[attr] == "string") {
+											var text_node = $("#sortie ." + attr + " .text");
+
+											if (!text_node.length) {
+												text_node = $("#sortie ." + attr);
+											}
+
+											text_node.text(event[attr]);
 					  				}
 						  		})
 						  	}
