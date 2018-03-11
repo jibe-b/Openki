@@ -70,20 +70,20 @@
 							-->
 							<input type="text" name="lieu" id="lieu" style="margin-bottom:20px" />
 							<iframe
-							  width="600"
-							  height="450"
-							  frameborder="0" style="border:0"
-							  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCnib83EmSypP6_GRQyNmOj1tv535W-W40&q=Space+Needle,Seattle+WA" allowfullscreen>
+								width="600"
+								height="450"
+								frameborder="0" style="border:0"
+								src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCnib83EmSypP6_GRQyNmOj1tv535W-W40&q=Space+Needle,Seattle+WA" allowfullscreen>
 							</iframe>
 							<script type="text/javascript">
-							  window.addEventListener("load", function() {
-							  	$("#lieu").keyup(function(){
-							  		var google_api_key_anis = "AIzaSyCnib83EmSypP6_GRQyNmOj1tv535W-W40";
-							  		var search = $("#lieu").val().replace(" ", "+");
-							  		var url = "https://www.google.com/maps/embed/v1/place?key=" + google_api_key_anis + "&q=" + search;
-							  		$("form iframe").attr("src", url);
-							  	})
-							  });
+								window.addEventListener("load", function() {
+									$("#lieu").keyup(function(){
+										var google_api_key_anis = "AIzaSyCnib83EmSypP6_GRQyNmOj1tv535W-W40";
+										var search = $("#lieu").val().replace(" ", "+");
+										var url = "https://www.google.com/maps/embed/v1/place?key=" + google_api_key_anis + "&q=" + search;
+										$("form iframe").attr("src", url);
+									})
+								});
 							</script>
 						</div>
 						<div class="field">
